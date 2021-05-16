@@ -15,5 +15,17 @@ let app = {
         let tuto = document.getElementById('tuto');
         tuto.addEventListener('click', app.handleTuto);
     },
+    handlePlanet: function(event) {
+        console.log('On clique sur planetes');
+    },
+    handlePerso: function(event) {
+        console.log('persos');
+    },
+    handleShips: function(event) {
+        console.log('vaisseau');
+    },
+    handleVehicles: function(event) {
+        console.log('vehicules');
+    }
 }
 document.addEventListener('DOMContentLoaded', app.init);
