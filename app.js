@@ -16,6 +16,7 @@ let app = {
         tuto.addEventListener('click', app.handleTuto);
     },
     handlePlanet: function() {
+        document.getElementById('u1').innerHTML = " ";
         console.log('On clique sur planetes');
         fetch("https://swapi.dev/api/planets/")
             .then(function(res) {
@@ -30,6 +31,7 @@ let app = {
             })
     },
     handlePerso: function() {
+        document.getElementById('u1').innerHTML = " ";
         console.log('persos');
         fetch("https://swapi.dev/api/people/")
             .then(function(res) {
