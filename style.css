@@ -1,0 +1,39 @@
+body {
+    background-color: black;
+    color: silver;
+}
+header {
+    background-color: silver;
+    color: black;
+    margin-bottom: 1em;
+}
+h1 {
+    color: red;
+    font-size: 2.5em;
+    font-weight: bold;
+    text-align: center;
+    padding: 1em;
+}
+main {
+    min-height: 100vh;
+}
+
+section {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+button {
+    font-size: 1.2em;
+    border-radius: 8px;
+}
+
+footer {
+    text-align: center;
+    background-color: silver;
+    color: black;
+    font-size: 1.3em;
+    padding: 1em;
+}
