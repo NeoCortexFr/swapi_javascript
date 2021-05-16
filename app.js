@@ -17,6 +17,17 @@ let app = {
     },
     handlePlanet: function(event) {
         console.log('On clique sur planetes');
+        fetch("https://swapi.dev/api/planets/")
+            .then(function(res) {
+                console.log('Connexion établie');
+                return res.json();
+            })
+            .then(function(data) {
+                for (let i=0; i<10; i++) {
+                    document.getElementById('u1').innerHTML +=
+                    `<li>` + data.results[i].name; + `</li>`
+                }
+            })
     },
     handlePerso: function(event) {
         console.log('persos');
