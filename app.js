@@ -16,17 +16,42 @@ let app = {
         tuto.addEventListener('click', app.handleTuto);
     },
     handlePlanet: function() {
+        // On vide la liste
         document.getElementById('u1').innerHTML = " ";
+        // Debug
         console.log('On clique sur planetes');
-        fetch("https://swapi.dev/api/planets/")
-            .then(function(res) {
+        // Version générique de l'url:
+        let currentUrl = "https://swapi.dev/api/planets/"
+        // L'ajout dans l'url:
+        let addUrl = ""
+        // Appel API
+        fetch(currentUrl + addUrl)
+            .then(function(responce) {
                 console.log('Connexion établie');
-                return res.json();
+                return responce.json();
             })
+            // Utilisation des resultats (10 par page)
             .then(function(data) {
                 for (let i=0; i<10; i++) {
                     document.getElementById('u1').innerHTML +=
                     `<li>` + data.results[i].name; + `</li>`
+                    /* 
+                        On modifie la class du bouton pour apparaître dans le DOM
+                        lors de la réponse de l'API
+                    */
+                    
+                    /*
+                        Au clic: modifier addUrl vers ?page= n° suivant et précédent au cas où:
+                    */
+                    if (addUrl == "") {
+                        let next = document.getElementById('next');
+                        next.className = "displayNext";
+                    } else {
+                        let next = document.getElementById('next');
+                        next.className = "displayNext";
+                        let previous = document.getElementById('previous');
+                        previous.className = "displayPrevious";
+                    }
                 }
             })
     },
@@ -81,6 +106,9 @@ let app = {
                     `</li>`
                 }
             })
+    },
+    handleNext: function(event) {
+        console.log('suivant !');
     }
 }
 document.addEventListener('DOMContentLoaded', app.init);

@@ -61,3 +61,15 @@ footer {
     font-size: 1.3em;
     padding: 1em;
 }
+.next {
+    display: none;
+}
+.displayNext {
+    display: block;
+}
+.previous {
+    display: none;
+}
+.displayPrevious {
+    display: block;
+}
