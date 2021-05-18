@@ -23,9 +23,22 @@ let app = {
         // Version générique de l'url:
         let currentUrl = "https://swapi.dev/api/planets/"
         // L'ajout dans l'url:
-        let addUrl = ""
+        let nextUrl = "";
         // Appel API
-        fetch(currentUrl + addUrl)
+
+/*  TODO:
+Essayer de récupérer l'id du button en currentTarget
+L'ajouter à currentUrl = https://swapi.dev/api/ + id + / pour DRY!
+Au click du bouton "next" => remplacer currentUrl par data.next du bon id !!!
+        ou ajouter ?page= et trouver comment mettre le bon n° de page
+        possible de récuperer data.next et couper l'adresse. Mettre en variable et l'ajouter à currentUrl
+idem pour previous
+Tant que j'y suis: Afficher le count pour chaque catégorie.
+*/
+
+
+        if (nextUrl == "") {
+        fetch(currentUrl)
             .then(function(responce) {
                 console.log('Connexion établie');
                 return responce.json();
@@ -42,18 +55,24 @@ let app = {
                     
                     /*
                         Au clic: modifier addUrl vers ?page= n° suivant et précédent au cas où:
-                    */
-                    if (addUrl == "") {
+                    
+                    if (nextUrl == "") {
+                        */
                         let next = document.getElementById('next');
                         next.className = "displayNext";
+                        next.addEventListener('click', function(event) {
+                            console.log('next: ', data.next);
+                            nextUrl = data.next;/*
+                        });
                     } else {
                         let next = document.getElementById('next');
                         next.className = "displayNext";
                         let previous = document.getElementById('previous');
                         previous.className = "displayPrevious";
-                    }
+                    }*/
                 }
             })
+        }
     },
     handlePerso: function() {
         document.getElementById('u1').innerHTML = " ";
