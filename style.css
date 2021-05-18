@@ -29,6 +29,30 @@ button {
     font-size: 1.2em;
     border-radius: 8px;
 }
+ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 2em;
+}
+li {
+    color: white;
+    font-weight: bold;
+    /*background-color: silver;*/
+    border: 1px solid silver;
+    width: 500px;
+    padding: 1em;
+    margin: 0.8em;
+}
+.factory {
+    color: aquamarine;
+    font-weight: normal;
+}
+.model {
+    color: red;
+    font-weight: normal;
+}
 
 footer {
     text-align: center;
